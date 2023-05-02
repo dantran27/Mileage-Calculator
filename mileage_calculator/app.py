@@ -19,22 +19,26 @@ class MainWindow(QMainWindow):
         gui = QWidget()
 
         gui.setLayout(layout)
-        self.setCentralWidget(gui)
         
-        label = QLabel("Press here to calculate miles!")
+        label = QLabel("Calculate miles!")
         font = label.font()
         font.setPointSize(10)
         label.setFont(font)
         layout.addWidget(label)
 
-        self.setCentralWidget(gui)
+        widget = QComboBox()
+        widget.addItems(["One", "Two", "Three"])
+
         
         Calculate_button = QPushButton(text="Calculate", parent=self)
         Calculate_button.setFixedSize(100, 60)
-
+        layout.addWidget(widget)
         layout.addWidget(Calculate_button)
 
+        
 
+
+        self.setCentralWidget(gui)
 
 
 app = QApplication(sys.argv)
