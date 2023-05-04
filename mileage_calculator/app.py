@@ -27,12 +27,15 @@ class MainWindow(QMainWindow):
         layout.addWidget(label)
 
         widget = QComboBox()
-        widget.addItems(["One", "Two", "Three"])
+        widget.addItems(["Hillsoboro", "Two", "Three"])
 
+        widget2 = QComboBox()
+        widget2.addItems(["Albany", "Baker City", "Beaverton"])
         
         Calculate_button = QPushButton(text="Calculate", parent=self)
         Calculate_button.setFixedSize(100, 60)
         layout.addWidget(widget)
+        layout.addWidget(widget2)
         layout.addWidget(Calculate_button)
 
         
