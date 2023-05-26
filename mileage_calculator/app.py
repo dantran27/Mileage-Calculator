@@ -4,6 +4,8 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget,
                              QLabel,QLineEdit,QSpinBox,QPushButton)
 from PyQt6.QtGui import QPalette, QColor
 
+import controller
+
 class MainWindow(QMainWindow):
 
     def __init__(self):
@@ -43,7 +45,12 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(gui)
 
     def calculate_miles(self):
-        pass
+        city1 = self.widget.currentText()
+        city2 = self.widget2.currentText()
+        # get miles 
+        miles = controller.get_miles(city1, city2)
+        print(miles)
+       
 
 
 

@@ -18,6 +18,7 @@ mileage_chart = {
 
 def get_miles(city1, city2):
     miles = mileage_chart[city1][city2]
+    return miles
 
 
 if __name__ == "__main__":
