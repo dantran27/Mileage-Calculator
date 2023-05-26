@@ -26,22 +26,25 @@ class MainWindow(QMainWindow):
         label.setFont(font)
         layout.addWidget(label)
 
-        widget = QComboBox()
-        widget.addItems(["Hillsoboro", "Two", "Three"])
+        self.widget = QComboBox()
+        self.widget.addItems(["Albany", "Baker City", "Beaverton"])
 
-        widget2 = QComboBox()
-        widget2.addItems(["Albany", "Baker City", "Beaverton"])
+        self.widget2 = QComboBox()
+        self.widget2.addItems(["Albany", "Baker City", "Beaverton"])
         
-        Calculate_button = QPushButton(text="Calculate", parent=self)
-        Calculate_button.setFixedSize(100, 60)
-        layout.addWidget(widget)
-        layout.addWidget(widget2)
-        layout.addWidget(Calculate_button)
-
+        self.calculate_button = QPushButton(text="Calculate", parent=self)
+        self.calculate_button.setFixedSize(100, 60)
+        self.calculate_button.clicked.connect(self.calculate_miles)
         
-
+        layout.addWidget(self.widget)
+        layout.addWidget(self.widget2)
+        layout.addWidget(self.calculate_button)
 
         self.setCentralWidget(gui)
+
+    def calculate_miles(self):
+        pass
+
 
 
 app = QApplication(sys.argv)
