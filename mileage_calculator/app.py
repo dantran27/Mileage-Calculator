@@ -1,7 +1,7 @@
 import sys
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget,
                              QVBoxLayout,QHBoxLayout,QComboBox,
-                             QLabel,QLineEdit,QSpinBox,QPushButton)
+                             QLabel,QTextEdit,QSpinBox,QPushButton)
 from PyQt6.QtGui import QPalette, QColor
 
 import controller
@@ -37,10 +37,12 @@ class MainWindow(QMainWindow):
         self.calculate_button = QPushButton(text="Calculate", parent=self)
         self.calculate_button.setFixedSize(100, 60)
         self.calculate_button.clicked.connect(self.calculate_miles)
+        self.output=QTextEdit()
         
         layout.addWidget(self.widget)
         layout.addWidget(self.widget2)
         layout.addWidget(self.calculate_button)
+        layout.addWidget(self.output)
 
         self.setCentralWidget(gui)
 
@@ -49,7 +51,8 @@ class MainWindow(QMainWindow):
         city2 = self.widget2.currentText()
         # get miles 
         miles = controller.get_miles(city1, city2)
-        print(miles)
+        result = f"From {city1} to {city2} the miles are {miles}."
+        self.output.setText(result)
        
 
 
