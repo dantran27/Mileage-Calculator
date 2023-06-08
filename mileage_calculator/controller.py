@@ -3,17 +3,38 @@ mileage_chart = {
         "Albany": 0,
         "Baker City": 351,
         "Beaverton": 67,
+        "Bend": 125,
+        "Salem": 25,
     },
     "Baker City": {
         "Albany": 351,
         "Baker City": 0,
         "Beaverton": 312,
+        "Bend": 231,
+        "Salem": 349, 
     },
     "Beaverton": {
         "Albany": 67,
         "Baker City": 312,
         "Beaverton": 0,
+        "Bend": 173,
+        "Salem": 43,
+    },
+    "Bend": {
+        "Albany": 125,
+        "Baker City": 231,
+        "Beaverton": 173,
+        "Bend": 0,
+        "Salem": 132,
+    },
+    "Salem":{
+        "Albany": 25,
+        "Baker City": 349,
+        "Beaverton": 43,
+        "Bend": 132,
+        "Salem": 0,
     }
+    
 }
 
 def get_miles(city1, city2):
